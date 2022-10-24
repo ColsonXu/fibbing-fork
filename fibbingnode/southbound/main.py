@@ -1,11 +1,14 @@
-from ConfigParser import DEFAULTSECT
+from configparser import DEFAULTSECT
 from cmd import Cmd
 import logging
 import sys
 import subprocess
 import argparse
 import datetime
-from fibbing import FibbingManager
+from .fibbing import FibbingManager
+# import fibbingnode
+# import sys
+# sys.path.append('/home/mininet/fibbing-fork')
 import fibbingnode
 from fibbingnode.misc.utils import dump_threads
 import signal

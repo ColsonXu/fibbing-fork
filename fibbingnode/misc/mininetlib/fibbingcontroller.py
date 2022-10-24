@@ -2,12 +2,11 @@ import signal
 import os
 import subprocess
 
-import ConfigParser as cparser
+import configparser as cparser
 
 import mininet.node as _node
 
-from fibbingnode.misc.mininetlib import get_logger, CFG_KEY, otherIntf,\
-                                        L3Router
+from fibbingnode.misc.mininetlib import get_logger, CFG_KEY, otherIntf, L3Router
 from fibbingnode.misc.utils import del_file, force
 
 
@@ -61,12 +60,12 @@ class FibbingController(_node.Host, L3Router):
     def dump_cfg_info(self):
         cfg = cparser.ConfigParser()
         for key, val in self.config_params.iteritems():
-            cfg.set(cparser.DEFAULTSECT, key, val)
+            cfg.set(cparser.DEFAULTSECT, str(key), str(val))
         cfg.set(cparser.DEFAULTSECT,
                 'json_hostname', 'unix://%s' % self.socket_path)
         cfg.set(cparser.DEFAULTSECT,
                 'controller_instance_number',
-                self.instance_number)
+                str(self.instance_number))
         connected_intfs = [itf
                            for itf in self.intfList()
                            if L3Router.is_l3router_intf(otherIntf(itf)) and

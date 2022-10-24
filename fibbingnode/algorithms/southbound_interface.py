@@ -2,7 +2,7 @@
 
 import abc
 import copy
-from ConfigParser import DEFAULTSECT
+from configparser import DEFAULTSECT
 
 import networkx as nx
 

@@ -4,7 +4,7 @@ import sys
 import os
 
 import fibbingnode
-from lsdb import LSDB
+from .lsdb import LSDB
 from fibbingnode.misc.utils import require_cmd, force, ConfigDict
 from fibbingnode.misc.router import QuaggaRouter, RouterConfigDict
 from namespaces import NetworkNamespace, RootNamespace

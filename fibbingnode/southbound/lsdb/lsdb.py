@@ -1,8 +1,8 @@
-from Queue import Queue, Empty
+from queue import Queue, Empty
 from collections import defaultdict
 from itertools import chain
 import json
-from ConfigParser import DEFAULTSECT
+from configparser import DEFAULTSECT
 from operator import methodcaller
 
 from ipaddress import ip_address, ip_network

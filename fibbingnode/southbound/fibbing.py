@@ -1,11 +1,11 @@
-from ConfigParser import DEFAULTSECT, Error as ConfigError
+from configparser import DEFAULTSECT, Error as ConfigError
 from collections import OrderedDict
 from itertools import groupby
 from operator import itemgetter
 import subprocess
 from fibbingnode import log, CFG
-from link import Link, PhysicalLink
-from entities import Router, RootRouter, Bridge
+from .link import Link, PhysicalLink
+from .entities import Router, RootRouter, Bridge
 from ipaddress import ip_network, ip_interface, ip_address
 from fibbingnode.misc.sjmp import SJMPServer
 from interface import FakeNodeProxy

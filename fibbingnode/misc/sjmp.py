@@ -1,5 +1,6 @@
 import traceback
-import cStringIO as StringIO
+# import cStringIO as StringIO
+from io import StringIO
 import sys
 import os
 import json
@@ -7,7 +8,12 @@ import socket
 import select
 import inspect
 import logging
-from urlparse import urlparse
+# from urlparse import urlparse
+
+try:
+    from urllib.parse import urlparse
+except ImportError:
+    from urlparse import urlparse
 
 from .utils import start_daemon_thread
 

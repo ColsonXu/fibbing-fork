@@ -1,4 +1,5 @@
-import southbound.main as _m
+# import southbound.main as _m
+from .southbound import main as _m
 
 
 if __name__ == '__main__':

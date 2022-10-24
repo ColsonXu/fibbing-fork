@@ -1,6 +1,6 @@
 import logging
 import os
-import ConfigParser
+import configparser
 import threading
 
 EXIT = threading.Event()
@@ -13,12 +13,12 @@ TEMPLATES = os.path.join(RES, 'templates')
 def get_template_path(name):
     return os.path.realpath(os.path.join(TEMPLATES, name))
 
-CFG = ConfigParser.ConfigParser()
+CFG = configparser.ConfigParser()
 with open(os.path.join(RES, 'default.cfg'), 'r') as f:
     CFG.readfp(f)
 
 # Path to the directory containing the Quagga-Fibbing installation
-BIN = CFG.get(ConfigParser.DEFAULTSECT, 'quagga_path')
+BIN = CFG.get(configparser.DEFAULTSECT, 'quagga_path')
 
 # Warnings are orange
 logging.addLevelName(logging.WARNING, "\033[1;43m%s\033[1;0m" %
