@@ -1,4 +1,4 @@
-from queue import Queue, Empty
+from Queue import Queue, Empty
 from collections import defaultdict
 from itertools import chain
 import json

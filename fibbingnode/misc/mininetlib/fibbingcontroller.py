@@ -30,7 +30,7 @@ class FibbingController(_node.Host, L3Router):
         self.cmd('ip', 'link', 'set', 'dev', 'lo', 'up')
         itfs = self.dump_cfg_info()
         log.info('Starting southbound controller for ', self.name, '\n')
-        args = ['python', '-m', 'fibbingnode',  # '--nocli',
+        args = ['python2', '-m', 'fibbingnode',  # '--nocli',
                 '--cfg', self.cfg_path]
         args.extend(itfs)
         serr = sout = (None if not self.quiet else open(os.devnull, 'wb'))
